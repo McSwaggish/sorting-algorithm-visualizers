@@ -2,3 +2,4 @@
 ## ---- TO-DO ----
 ### **[**O**]** Bubble Sort
 ### **[** **]** Insertion Sort
+### **[** **]** Bogo Sort
