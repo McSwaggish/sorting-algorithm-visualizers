@@ -1,4 +1,4 @@
 # Sorting Algorithm Visualizers
 ## ---- TO-DO ----
-### [O] Bubble Sort
-### [ ] Insertion Sort
+### **[**O**]** Bubble Sort
+### **[** **]** Insertion Sort
