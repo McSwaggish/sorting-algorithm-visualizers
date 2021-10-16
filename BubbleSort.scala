@@ -94,11 +94,6 @@ object BubbleSort {
             amountOfComparisons -= 1 //optimization - dont check already correctly placed elements
         }
         
-        //showcase order
-        for i <- 0 until theThingy.length do
-            window.highlightComparison(i, theThingy(i))
-            Thread.sleep(25)
-            window.highlightSwap(i, theThingy(i))
-            Thread.sleep(25)
+        window.highlightOrder(theThingy)
     }
 }

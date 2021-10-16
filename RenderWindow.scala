@@ -22,4 +22,12 @@ class RenderWindow(
     def highlightSwap(x: Int, height: Int): Unit = {
         window.fill(x * barWidth_plus_space + offset, 720 - height * 7, barWidth_plus_space - 2, height * 7, java.awt.Color(0x00, 0xff, 0x00))
     }
+
+    def highlightOrder(theArr: Array[Int]): Unit = {
+        for i <- 0 until theArr.length do
+            highlightComparison(i, theArr(i))
+            Thread.sleep(25)
+            highlightSwap(i, theArr(i))
+            Thread.sleep(25)
+    }
 }

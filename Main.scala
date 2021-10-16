@@ -5,8 +5,8 @@ object Main {
         print("\u001b[2J\u001b[;H")
 
         println("Choose algorithm:")
-        println("  [1]: Bubble Sort")
-        println("  [2]: Bogosort")
+        println(" [1] Bubble Sort")
+        println(" [2] Bogosort")
 
         print("\nChoice: ")
         val algorithmChoice: Int = scala.io.StdIn.readInt()

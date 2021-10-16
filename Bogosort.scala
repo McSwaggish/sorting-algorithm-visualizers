@@ -2,30 +2,33 @@ package sortingAlgoritmVisualizers
 
 object Bogosort {
     def sort(elements: Int): Unit = {
-        val elements: Int = 3
 
-        val window = new RenderWindow((1280, 720), "Bubble Sort", elements)
-        //var noSwaps: Boolean = false
-        
+        val window = new RenderWindow((1280, 720), "Bogosort", elements)
+        var looping: Boolean = true
+
         val initVec:   Seq[Int]    = for(i <- 0 until elements) yield (math.random() * 100).toInt
         val xs:        Array[Int]  = initVec.toArray
+        var finale:    Array[Int]  = initVec.toArray
         
-        def drawEverything(): Unit =
-            for i <- 0 until xs.length do
-                window.draw(i, xs(i))
+        def drawEverything(ys: Array[Int]): Unit =
+            for i <- 0 until ys.length do
+                window.draw(i, ys(i))
 
-        //drawEverything()
-        
-        var xl = xs
+        window.window.show()
+        drawEverything(xs)
+        Thread.sleep(1500)
 
-        while(!(xl == xs.sorted)){
-            val xl = scala.util.Random.shuffle(xs)
-            //println(s"${xl(0)}, ${xl(1)}, ${xl(2)}")
-            //println(s"${xs.sorted(0)}, ${xl(1)}, ${xl(2)}")
-            Thread.sleep(200)
+        while(looping) {
+            val xl: Array[Int] = scala.util.Random.shuffle(xs).toArray
+            window.window.clear()
+            drawEverything(xl)
+            Thread.sleep(14) 
+
+            if xl.toVector == xs.sorted.toVector
+                then looping = false
+                     finale = xl
         }
 
-        println("DONE !")
-        
+        window.highlightOrder(finale)
     }
 }
