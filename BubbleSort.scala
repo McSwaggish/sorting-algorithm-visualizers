@@ -40,9 +40,7 @@ object BubbleSort {
     } */
 
 
-    def main(penis: Array[String]): Unit = {
-        val elements: Int = 25
-
+    def sort(elements: Int): Unit = {
         val window = new RenderWindow((1280, 720), "Bubble Sort", elements)
         var noSwaps: Boolean = false
         
@@ -61,22 +59,27 @@ object BubbleSort {
         drawEverything()
         Thread.sleep(1500)
 
-        def updateComparasin(i: Int): Unit =
+        //highlights the two elements being compared
+        def updateComparison(i: Int): Unit =
             window.window.clear()
             drawEverything()
-            window.highlightComparasin(i, theThingy(i))
-            window.highlightComparasin(i + 1, theThingy(i + 1))
+            window.highlightComparison(i, theThingy(i))
+            window.highlightComparison(i + 1, theThingy(i + 1))
         
+        //highlights the two elements being compared if they swap
         def updateSwap(i: Int): Unit =
             window.window.clear()
             drawEverything()
             window.highlightSwap(i, theThingy(i))
             window.highlightSwap(i + 1, theThingy(i + 1))
 
+        var amountOfComparisons = theThingy.length - 1
+
+        //actual sorting algorithm
         while(!noSwaps) {
             noSwaps = true
-            for i <- 0 until theThingy.length - 1 do
-                updateComparasin(i)
+            for i <- 0 until amountOfComparisons do
+                updateComparison(i)
                 if theThingy(i) > theThingy(i + 1) then
                     Thread.sleep(7)
                     swap(i, i + 1)
@@ -87,17 +90,15 @@ object BubbleSort {
                     window.window.clear()
                     drawEverything()
                     Thread.sleep(14)
-        }
 
+            amountOfComparisons -= 1 //optimization - dont check already correctly placed elements
+        }
+        
+        //showcase order
         for i <- 0 until theThingy.length do
-            window.highlightComparasin(i, theThingy(i))
+            window.highlightComparison(i, theThingy(i))
             Thread.sleep(25)
             window.highlightSwap(i, theThingy(i))
             Thread.sleep(25)
-
-        println("DONE !")
-
-
-    
     }
 }

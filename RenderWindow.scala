@@ -15,7 +15,7 @@ class RenderWindow(
         window.fill(x * barWidth_plus_space + offset, 720 - height * 7, barWidth_plus_space - 2, height * 7, java.awt.Color.white)
     }
 
-    def highlightComparasin(x: Int, height: Int): Unit = {
+    def highlightComparison(x: Int, height: Int): Unit = {
         window.fill(x * barWidth_plus_space + offset, 720 - height * 7, barWidth_plus_space - 2, height * 7, java.awt.Color(0xff, 0x00, 0x00))
     }
     
