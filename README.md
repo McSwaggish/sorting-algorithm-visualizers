@@ -1,6 +1,6 @@
 ## Sorting Algorithm Visualizers
 ### TO-DO
-## - [X] [Bubble Sort](https://en.wikipedia.org/wiki/Bubble_sort)
+- [X] [Bubble Sort](https://en.wikipedia.org/wiki/Bubble_sort)
 - [ ] [Insertion Sort](https://en.wikipedia.org/wiki/Insertion_sort)
 - [ ] [Bogosort](https://en.wikipedia.org/wiki/Bogosort)
 
