@@ -23,6 +23,10 @@ class RenderWindow(
         window.fill(x * barWidth_plus_space + offset, 720 - height * 7, barWidth_plus_space - 2, height * 7, java.awt.Color(0x00, 0xff, 0x00))
     }
 
+    def clear(): Unit = {
+        window.clear()
+    }
+
     def highlightOrder(theArr: Array[Int]): Unit = {
         for i <- 0 until theArr.length do
             highlightComparison(i, theArr(i))

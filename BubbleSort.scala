@@ -41,11 +41,11 @@ object BubbleSort {
 
 
     def sort(elements: Int): Unit = {
-        val window = new RenderWindow((1280, 720), "Bubble Sort", elements)
+        val window = new RenderWindow((1280, 720), "Bubble sort", elements)
         var noSwaps: Boolean = false
         
-        val initVec:   Seq[Int]    = for(i <- 0 until elements) yield (math.random() * 100).toInt
-        val theThingy: Array[Int]  = initVec.toArray
+        val initVec:   Seq[Int]   = for (i <- 0 until elements) yield (math.random() * 100).toInt
+        val theThingy: Array[Int] = initVec.toArray
         
         def swap(a: Int, b: Int): Unit =
             val temp: Int = theThingy(a)
@@ -61,14 +61,14 @@ object BubbleSort {
 
         //highlights the two elements being compared
         def updateComparison(i: Int): Unit =
-            window.window.clear()
+            window.clear()
             drawEverything()
             window.highlightComparison(i, theThingy(i))
             window.highlightComparison(i + 1, theThingy(i + 1))
         
         //highlights the two elements being compared if they swap
         def updateSwap(i: Int): Unit =
-            window.window.clear()
+            window.clear()
             drawEverything()
             window.highlightSwap(i, theThingy(i))
             window.highlightSwap(i + 1, theThingy(i + 1))
@@ -87,7 +87,7 @@ object BubbleSort {
                     updateSwap(i)
                     Thread.sleep(7)
                 else
-                    window.window.clear()
+                    window.clear()
                     drawEverything()
                     Thread.sleep(14)
 

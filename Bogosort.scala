@@ -6,9 +6,9 @@ object Bogosort {
         val window = new RenderWindow((1280, 720), "Bogosort", elements)
         var looping: Boolean = true
 
-        val initVec:   Seq[Int]    = for(i <- 0 until elements) yield (math.random() * 100).toInt
-        val xs:        Array[Int]  = initVec.toArray
-        var finale:    Array[Int]  = initVec.toArray
+        val initVec: Seq[Int]   = for (i <- 0 until elements) yield (math.random() * 100).toInt
+        val xs:      Array[Int] = initVec.toArray
+        var finale:  Array[Int] = initVec.toArray
         
         def drawEverything(ys: Array[Int]): Unit =
             for i <- 0 until ys.length do
@@ -20,7 +20,7 @@ object Bogosort {
 
         while(looping) {
             val xl: Array[Int] = scala.util.Random.shuffle(xs).toArray
-            window.window.clear()
+            window.clear()
             drawEverything(xl)
             Thread.sleep(14) 
 
